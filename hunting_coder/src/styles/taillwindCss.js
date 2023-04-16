@@ -1,7 +1,7 @@
 export const mainStyles = {
     mainnav: 'flex justify-center items-center py-10',
     navList: 'flex flex-row gap-x-10 text-xl font-semibold',
-    navItem: 'cursor-pointer px-2 py-1',
+    navItem: 'cursor-pointer px-2 py-1 ',
     main: 'flex min-h-screen flex-col items-center justify-between p-24 pt-10',
     mainBodyContainer: 'flex flex-col gap-y-16 justify-center items-center',
     heroContainer: 'flex flex-col leading-4 gap-y-5 text-center text-clip',

@@ -17,15 +17,15 @@ export default function Home() {
         <meta name="keywords" content="huting coder, hunting, coder, nextJs, nextjs" />
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </Head>
-      <Script src='/api/hello.js' strategy='lazyOnload' onError={() => console.log('Hola')}>
+      {/* <Script src='/api/hello.js' strategy='lazyOnload' onError={() => console.log('Hola')}>
         alert('Hola')
-      </Script>
+      </Script> */}
       <nav className={`${mainStyles.mainnav}`}>
         <ul className={`${mainStyles.navList}`}>
-          <Link href='/' scroll={true} prefetch={true}>
+          <Link href='/' scroll={true} >
             <li className={`${mainStyles.navItem}`}>Home</li>
           </Link>
-          <Link href='/about' prefetch={true}>
+          <Link href='/about' >
             <li className={`${mainStyles.navItem}`}>About</li>
           </Link>
           <Link href='/me'>
