@@ -10,7 +10,7 @@ const About = () => {
                 <meta name="keywords" content="huting coder, hunting, coder, nextJs, nextjs, About Hunting Coders" />
             </Head>
             <main>
-                <div>This is the About Page</div>
+                <div className="">This is the About Page</div>
             </main>
         </>
     );

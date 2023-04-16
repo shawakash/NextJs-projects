@@ -11,6 +11,16 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
+      {/* <style jsx>
+        {
+          `
+          .myBad{
+            background-color: red;
+          }
+          `
+        }
+      </style> */}
+      
       <Head>
         <title>Hunting Coder</title>
         <meta name="description" content="A blog post for the coder, by the coder, of the coder :)" />
@@ -52,9 +62,9 @@ export default function Home() {
           </div>
 
           <div className={`${mainStyles.blogPostsContainer}`}>
-            
+
             <Link href='/blog'>
-              <div className="blogHeading ">
+              <div className="blogHeading myBad">
                 <h2 className={`${mainStyles.blogTitle}`}>BlogPosts</h2>
               </div>
             </Link>
