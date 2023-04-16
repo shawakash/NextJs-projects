@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Script from 'next/script'
+import Link from 'next/link'
 // import mainStyles from '../styles/taillwindCss'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -20,11 +21,24 @@ export default function Home() {
       </Script>
       <nav className="flex justify-center items-center py-10">
         <ul className="flex flex-row gap-x-10 text-xl font-semibold">
-          <li className="">Home</li>
+          <Link href='/' scroll={true} prefetch={true}>
+            <li className="">Home</li>
+          </Link>
+          <Link href='/about' prefetch={true}>
           <li className="">About</li>
-          <li className="">Me</li>
-          <li className="">Bloggers</li>
-          <li className="">Contact</li>
+          </Link>
+          <Link href='/me'>
+            <li className="">Me</li>
+          </Link>
+          <Link href='/blog'>
+            <li className="">Blogs</li>
+          </Link>
+          <Link href='/bloggers'>
+            <li className="">Bloggers</li>
+          </Link>
+          <Link href='/contact'>
+            <li className="">Contact</li>
+          </Link>
         </ul>
       </nav>
       <main className="flex min-h-screen flex-col items-center justify-between p-24 pt-10">
@@ -38,19 +52,30 @@ export default function Home() {
               <h2 className="font-bold text-2xl tracking-wide border-b-2 w-fit px-2 border-dashed border-b-black py-2">BlogPosts</h2>
             </div>
             <div className="blog tracking-wide leading-5 w-1/2 flex flex-col gap-y-2">
-              <h3 className="font-semibold text-2xl">Do's and Don't's before Switching between Frameworks</h3>
+              <Link href='/blogpost/DosAndDont'>
+                  <h3 className="font-semibold text-2xl">Do's and Don't's before Switching between Frameworks</h3>
+              </Link>
               <p className="font-normal w-fit text-slate-600 text-lg">Lorem ipsum dolor sit  quisquam odit iure, ullam veniam enim saepe sequi dolores voluptatibus quidem assumenda minus expedita corrupti quae beatae voluptatum eius delectus sed quis. Voluptatem sint et eveniet placeat. Nulla nobis nisi ab ullam quisquam sequi? Possimus totam perferendis autem.</p>
             </div>
             <div className="blog tracking-wide leading-5 w-1/2 flex flex-col gap-y-2">
-              <h3 className="font-semibold text-2xl">Do's and Don't's before Switching between Frameworks</h3>
+              <Link href='/blogpost/DosAndDont'>
+                  <h3 className="font-semibold text-2xl">Do's and Don't's before Switching between Frameworks</h3>
+              </Link>
               <p className="font-normal w-fit text-slate-600 text-lg">Lorem ipsum dolor sit  quisquam odit iure, ullam veniam enim saepe sequi dolores voluptatibus quidem assumenda minus expedita corrupti quae beatae voluptatum eius delectus sed quis. Voluptatem sint et eveniet placeat. Nulla nobis nisi ab ullam quisquam sequi? Possimus totam perferendis autem.</p>
             </div>
             <div className="blog tracking-wide leading-5 w-1/2 flex flex-col gap-y-2">
-              <h3 className="font-semibold text-2xl">Do's and Don't's before Switching between Frameworks</h3>
+              <Link href='/blogpost/DosAndDont'>
+                  <h3 className="font-semibold text-2xl">Do's and Don't's before Switching between Frameworks</h3>
+              </Link>
               <p className="font-normal w-fit text-slate-600 text-lg">Lorem ipsum dolor sit  quisquam odit iure, ullam veniam enim saepe sequi dolores voluptatibus quidem assumenda minus expedita corrupti quae beatae voluptatum eius delectus sed quis. Voluptatem sint et eveniet placeat. Nulla nobis nisi ab ullam quisquam sequi? Possimus totam perferendis autem.</p>
             </div>
           </div>
         </div>
+        <Link href='/' scroll={true}>
+          <button className="bottom-2 border-black border rounded-lg p-2">
+            Page Up
+          </button>
+        </Link>
       </main>
     </>
   )
