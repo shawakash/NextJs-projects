@@ -30,28 +30,7 @@ export default function Home() {
       {/* <Script src='/api/hello.js' strategy='lazyOnload' onError={() => console.log('Hola')}>
         alert('Hola')
       </Script> */}
-      <nav className={`flex justify-center items-center py-10`}>
-        <ul className={`flex flex-row gap-x-10 text-xl font-semibold`}>
-          <Link href='/' scroll={true} >
-            <li className={`cursor-pointer px-2 py-1 `}>Home</li>
-          </Link>
-          <Link href='/about' >
-            <li className={`cursor-pointer px-2 py-1 `}>About</li>
-          </Link>
-          <Link href='/me'>
-            <li className={`cursor-pointer px-2 py-1 `}>Me</li>
-          </Link>
-          <Link href='/blog'>
-            <li className={`cursor-pointer px-2 py-1 `}>Blogs</li>
-          </Link>
-          <Link href='/bloggers'>
-            <li className={`cursor-pointer px-2 py-1 `}>Bloggers</li>
-          </Link>
-          <Link href='/contact'>
-            <li className={`cursor-pointer px-2 py-1 `}>Contact</li>
-          </Link>
-        </ul>
-      </nav>
+      
       <main className={`flex min-h-screen flex-col items-center justify-between p-24 gap-y-7 pt-10`}>
 
         <div className={`flex flex-col gap-y-16 justify-center items-center`}>
@@ -59,6 +38,9 @@ export default function Home() {
           <div className={`flex flex-col leading-4 gap-y-7 text-center text-clip`}>
             <h1 className={`text-black font-bold  text-5xl `}>Hunting Coder</h1>
             <p className={`tracking-wide text-xl`}>A BlogPost For Hunting Coders, By Hunting Coders and Of Hunting Coders :)</p>
+            <div className="flex justify-center">
+              <Image className='rounded-lg' src='/heroImg.jpg' width={150} height={50}/>
+            </div>
           </div>
 
           <div className={`blogPosts flex flex-col gap-y-7 items-center justify-center`}>
