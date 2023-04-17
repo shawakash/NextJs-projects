@@ -31,7 +31,7 @@ export default function Home() {
         alert('Hola')
       </Script> */}
       
-      <main className={`flex min-h-screen flex-col items-center justify-between p-24 gap-y-7 pt-10`}>
+      
 
         <div className={`flex flex-col gap-y-16 justify-center items-center`}>
 
@@ -80,7 +80,7 @@ export default function Home() {
             Page Up
           </button>
         </Link>
-      </main>
+
     </>
   )
 }
