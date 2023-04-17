@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Script from 'next/script'
 import Link from 'next/link'
-import { mainStyles } from '@/styles/taillwindCss'
+import  {mainStyles}  from '../styles'
 // import mainStyles from '../styles/taillwindCss.js'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -30,71 +30,71 @@ export default function Home() {
       {/* <Script src='/api/hello.js' strategy='lazyOnload' onError={() => console.log('Hola')}>
         alert('Hola')
       </Script> */}
-      <nav className={`${mainStyles.mainnav}`}>
-        <ul className={`${mainStyles.navList}`}>
+      <nav className={`flex justify-center items-center py-10`}>
+        <ul className={`flex flex-row gap-x-10 text-xl font-semibold`}>
           <Link href='/' scroll={true} >
-            <li className={`${mainStyles.navItem}`}>Home</li>
+            <li className={`cursor-pointer px-2 py-1 `}>Home</li>
           </Link>
           <Link href='/about' >
-            <li className={`${mainStyles.navItem}`}>About</li>
+            <li className={`cursor-pointer px-2 py-1 `}>About</li>
           </Link>
           <Link href='/me'>
-            <li className={`${mainStyles.navItem}`}>Me</li>
+            <li className={`cursor-pointer px-2 py-1 `}>Me</li>
           </Link>
           <Link href='/blog'>
-            <li className={`${mainStyles.navItem}`}>Blogs</li>
+            <li className={`cursor-pointer px-2 py-1 `}>Blogs</li>
           </Link>
           <Link href='/bloggers'>
-            <li className={`${mainStyles.navItem}`}>Bloggers</li>
+            <li className={`cursor-pointer px-2 py-1 `}>Bloggers</li>
           </Link>
           <Link href='/contact'>
-            <li className={`${mainStyles.navItem}`}>Contact</li>
+            <li className={`cursor-pointer px-2 py-1 `}>Contact</li>
           </Link>
         </ul>
       </nav>
-      <main className={`${mainStyles.main}`}>
+      <main className={`flex min-h-screen flex-col items-center justify-between p-24 gap-y-7 pt-10`}>
 
-        <div className={`${mainStyles.mainBodyContainer}`}>
+        <div className={`flex flex-col gap-y-16 justify-center items-center`}>
 
-          <div className={`${mainStyles.heroContainer}`}>
-            <h1 className={`${mainStyles.heroHeading}`}>Hunting Coder</h1>
-            <p className={`${mainStyles.heroDescr}`}>A BlogPost For Hunting Coders, By Hunting Coders and Of Hunting Coders :)</p>
+          <div className={`flex flex-col leading-4 gap-y-7 text-center text-clip`}>
+            <h1 className={`text-black font-bold  text-5xl `}>Hunting Coder</h1>
+            <p className={`tracking-wide text-xl`}>A BlogPost For Hunting Coders, By Hunting Coders and Of Hunting Coders :)</p>
           </div>
 
-          <div className={`${mainStyles.blogPostsContainer}`}>
+          <div className={`blogPosts flex flex-col gap-y-7 items-center justify-center`}>
 
             <Link href='/blog'>
-              <div className="blogHeading myBad">
-                <h2 className={`${mainStyles.blogTitle}`}>BlogPosts</h2>
+              <div className="">
+                <h2 className={`font-bold text-2xl tracking-wide border-b-2 w-fit px-2 border-dashed border-b-black py-2`}>BlogPosts</h2>
               </div>
             </Link>
 
-            <div className={`${mainStyles.blogContainer}`}>
+            <div className={`blog tracking-wide leading-5 w-1/2 flex flex-col gap-y-2`}>
               <Link href='/blogpost/DosAndDont'>
-                <h3 className={`${mainStyles.blogHeading}`}>Do's and Don't's before Switching between Frameworks</h3>
+                <h3 className={`font-semibold text-2xl`}>Do's and Don't's before Switching between Frameworks</h3>
               </Link>
-              <p className={`${mainStyles.blogDescr}`}>Lorem ipsum dolor sit  quisquam odit iure, ullam veniam enim saepe sequi dolores voluptatibus quidem assumenda minus expedita corrupti quae beatae voluptatum eius delectus sed quis. Voluptatem sint et eveniet placeat. Nulla nobis nisi ab ullam quisquam sequi? Possimus totam perferendis autem.</p>
+              <p className={`font-normal w-fit text-slate-600 text-lg`}>Lorem ipsum dolor sit  quisquam odit iure, ullam veniam enim saepe sequi dolores voluptatibus quidem assumenda minus expedita corrupti quae beatae voluptatum eius delectus sed quis. Voluptatem sint et eveniet placeat. Nulla nobis nisi ab ullam quisquam sequi? Possimus totam perferendis autem.</p>
             </div>
 
-            <div className={`${mainStyles.blogContainer}`}>
+            <div className={`blog tracking-wide leading-5 w-1/2 flex flex-col gap-y-2`}>
               <Link href='/blogpost/DosAndDont'>
-                <h3 className={`${mainStyles.blogHeading}`}>Do's and Don't's before Switching between Frameworks</h3>
+                <h3 className={`font-semibold text-2xl`}>Do's and Don't's before Switching between Frameworks</h3>
               </Link>
-              <p className={`${mainStyles.blogDescr}`}>Lorem ipsum dolor sit  quisquam odit iure, ullam veniam enim saepe sequi dolores voluptatibus quidem assumenda minus expedita corrupti quae beatae voluptatum eius delectus sed quis. Voluptatem sint et eveniet placeat. Nulla nobis nisi ab ullam quisquam sequi? Possimus totam perferendis autem.</p>
+              <p className={`font-normal w-fit text-slate-600 text-lg`}>Lorem ipsum dolor sit  quisquam odit iure, ullam veniam enim saepe sequi dolores voluptatibus quidem assumenda minus expedita corrupti quae beatae voluptatum eius delectus sed quis. Voluptatem sint et eveniet placeat. Nulla nobis nisi ab ullam quisquam sequi? Possimus totam perferendis autem.</p>
             </div>
 
-            <div className={`${mainStyles.blogContainer}`}>
+            <div className={`blog tracking-wide leading-5 w-1/2 flex flex-col gap-y-2`}>
               <Link href='/blogpost/DosAndDont'>
-                <h3 className={`${mainStyles.blogHeading}`}>Do's and Don't's before Switching between Frameworks</h3>
+                <h3 className={`font-semibold text-2xl`}>Do's and Don't's before Switching between Frameworks</h3>
               </Link>
-              <p className={`${mainStyles.blogDescr}`}>Lorem ipsum dolor sit  quisquam odit iure, ullam veniam enim saepe sequi dolores voluptatibus quidem assumenda minus expedita corrupti quae beatae voluptatum eius delectus sed quis. Voluptatem sint et eveniet placeat. Nulla nobis nisi ab ullam quisquam sequi? Possimus totam perferendis autem.</p>
+              <p className={`font-normal w-fit text-slate-600 text-lg`}>Lorem ipsum dolor sit  quisquam odit iure, ullam veniam enim saepe sequi dolores voluptatibus quidem assumenda minus expedita corrupti quae beatae voluptatum eius delectus sed quis. Voluptatem sint et eveniet placeat. Nulla nobis nisi ab ullam quisquam sequi? Possimus totam perferendis autem.</p>
             </div>
 
           </div>
         </div>
 
         <Link href='/' scroll={true}>
-          <button className={`${mainStyles.primaryButton}`}>
+          <button className={`bottom-2 border-black border rounded-lg p-2`}>
             Page Up
           </button>
         </Link>
