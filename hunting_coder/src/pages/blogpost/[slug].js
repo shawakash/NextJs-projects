@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 // Find the correct post using slug
 // Fill the page
@@ -9,6 +9,10 @@ import React from 'react'
 const slug = () => {
     const router = useRouter();
     const { slug } = router.query;
+    const [blog, setBlog] = useState({});
+    // useEffect(() = {
+    //     fetch('http://localhost:3000/api/blogPost?slug=tailwindCss').then()
+    // })
     { slug ? console.log(router) : '' }
     return (
         <>
