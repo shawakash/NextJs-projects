@@ -11,7 +11,7 @@ export default function handler(req, res) {
             return res.status(500).json({ err });
         }
 
-        // console.log(JSON.parse(data));
+        console.log(JSON.parse(data));
         return res.status(200).json(JSON.parse(data));
     });
 }

@@ -9,5 +9,6 @@ export default async function handler(req, res) {
     const jsonParse = JSON.parse(fileData)
     blogs.push(jsonParse);
   }
+  // console.log(blogs)
   return res.status(200).json( blogs );
 }

@@ -1,9 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
+// import * as fs from 'fs'
 
 const Blog = ({ blogs }) => {
-    
+
     return (
         <>
             <Head>
@@ -36,6 +37,18 @@ const Blog = ({ blogs }) => {
     );
 }
 
+// export async function getStaticProps(context) {
+//     let blogs = [];
+//     let data = await fs.promises.readdir('blogPost')
+//     for (let file of data) {
+//         let fileData = await fs.promises.readFile(`blogPost/${file}`, 'utf-8')
+//         const jsonParse = JSON.parse(fileData)
+//         blogs.push(jsonParse);
+//     }
+//     return {
+//         props: { blogs }      // will be passed as an props
+//     }
+// }
 export async function getServerSideProps(context) {
     let response = await fetch('http://localhost:3000/api/blogs');
     let blogs = await response.json();

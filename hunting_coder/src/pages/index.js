@@ -9,14 +9,8 @@ import { useEffect, useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
-  const [blogs, setBlogs] = useState([]);
-  useEffect(() => {
-    fetch('http://localhost:3000/api/blogs').then((a) => a.json()).then((parsed) => {
-      // console.log(parsed)
-      setBlogs(parsed);
-    });
-  }, [])
+export default function Home({ blogs }) {
+  
 
   return (
     <>
@@ -34,7 +28,6 @@ export default function Home() {
         <title>Hunting Coder</title>
         <meta name="description" content="A blog post for the coder, by the coder, of the coder :)" />
         <meta name="keywords" content="huting coder, hunting, coder, nextJs, nextjs" />
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </Head>
       {/* <Script src='/api/hello.js' strategy='lazyOnload' onError={() => console.log('Hola')}>
         alert('Hola')
@@ -48,7 +41,7 @@ export default function Home() {
           <h1 className={`text-black font-bold  text-5xl `}>Hunting Coder</h1>
           <p className={`tracking-wide text-xl`}>A BlogPost For Hunting Coders, By Hunting Coders and Of Hunting Coders :)</p>
           <div className="flex justify-center">
-            <Image className='rounded-lg' src='/heroImg.jpg' alt='' width={150} height={50} />
+            <Image className='rounded-lg' src='/heroImg.jpg' alt='img' width={150} height={50} />
           </div>
         </div>  
 
@@ -83,4 +76,13 @@ export default function Home() {
 
     </>
   )
+}
+
+export async function getServerSideProps(context) {
+  let response = await fetch('http://localhost:3000/api/blogs');
+  let blogs = await response.json();
+
+  return {
+      props: { blogs }      // will be passed as an props
+  }
 }
