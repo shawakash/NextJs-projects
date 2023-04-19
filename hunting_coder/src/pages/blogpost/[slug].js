@@ -6,17 +6,9 @@ import React, { useEffect, useState } from 'react'
 // Find the correct post using slug
 // Fill the page
 
-const slug = () => {
+const slug = ({ blog }) => {
     const router = useRouter();
     const { slug } = router.query;
-    const [blog, setBlog] = useState({});
-    // console.log(slug)
-    useEffect(() => {
-        slug && fetch(`http://localhost:3000/api/blogPost?slug=${slug}`)
-        .then(a => a.json())
-        .then(parsed => setBlog(parsed));
-    },[])
-
     return (
         <>
             <Head>
@@ -26,13 +18,24 @@ const slug = () => {
             </Head>
 
             <div className={`blog tracking-wide leading-5 w-1/2 flex flex-col gap-y-10`}>
-                <Link href='/blogpost/DosAndDont'>
+                <Link href={`/blogpost/${blog.slug}`}>
                     <h3 className={`font-semibold text-4xl`}>{blog?.title}</h3>
                 </Link>
                 <p className={`font-semibold w-fit text-slate-600 text-xl`}>{blog?.content}</p>
             </div>
         </>
-    )
+    );
+}
+
+export async function getServerSideProps(context) {
+    // console.log(context.query)
+    const { slug } = context.query
+    let response = await fetch(`http://localhost:3000/api/blogPost?slug=${slug}`);
+    const blog = await response.json();
+
+    return {
+        props: { blog }
+    }
 }
 
 export default slug

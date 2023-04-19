@@ -2,15 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
-const Blog = () => {
-    const [blogs, setBlogs] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:3000/api/blogs').then((a) => a.json()).then((parsed) => {
-            console.log(parsed)
-            setBlogs(parsed)
-        });
-
-    }, [])
+const Blog = ({ blogs }) => {
+    
     return (
         <>
             <Head>
@@ -27,20 +20,29 @@ const Blog = () => {
                     </div>
                 </Link>
                 {blogs?.map((blog) => {
-                    {/* console.log(blog.slug) */}
+                    {/* console.log(blog.slug) */ }
                     return (
                         <div key={blog.title} className={`blog tracking-wide leading-5 w-1/2 flex flex-col gap-y-2`}>
                             <Link href={`/blogpost/${blog.slug}`}>
                                 <h3 className={`font-semibold text-2xl`}>{blog?.title}</h3>
                             </Link>
-                            <p className={`font-normal w-fit text-slate-600 text-lg`}>{(blog?.content).slice(0, 250)} <span className='font-extrabold'><Link  href={`/blogpost/${blog.slug}`}>...</Link></span></p>
+                            <p className={`font-normal w-fit text-slate-600 text-lg`}>{(blog?.content).slice(0, 250)} <span className='font-extrabold'><Link href={`/blogpost/${blog.slug}`}>...</Link></span></p>
                         </div>
                     );
                 })}
-                
+
             </div>
         </>
     );
+}
+
+export async function getServerSideProps(context) {
+    let response = await fetch('http://localhost:3000/api/blogs');
+    let blogs = await response.json();
+
+    return {
+        props: { blogs }      // will be passed as an props
+    }
 }
 
 export default Blog

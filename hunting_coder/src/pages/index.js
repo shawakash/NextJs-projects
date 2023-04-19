@@ -50,7 +50,7 @@ export default function Home() {
           <div className="flex justify-center">
             <Image className='rounded-lg' src='/heroImg.jpg' alt='' width={150} height={50} />
           </div>
-        </div>
+        </div>  
 
         <div className={`blogPosts flex flex-col gap-y-7 items-center justify-center`}>
 
