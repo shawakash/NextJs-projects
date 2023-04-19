@@ -67,7 +67,7 @@ export default function Home() {
                 <Link href={`/blogpost/${blog.slug}`}>
                   <h3 className={`font-semibold text-2xl`}>{blog?.title}</h3>
                 </Link>
-                <p className={`font-normal w-fit text-slate-600 text-lg`}>{(blog?.content).slice(0, 250)} ...</p>
+                <p className={`font-normal w-fit text-slate-600 text-lg`}>{(blog?.content).slice(0, 250)} <span className='font-extrabold'><Link  href={`/blogpost/${blog.slug}`}>...</Link></span></p>
               </div>
             );
           })}

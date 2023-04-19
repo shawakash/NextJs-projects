@@ -20,7 +20,7 @@ const slug = () => {
     return (
         <>
             <Head>
-                <title>{slug?.toLocaleUpperCase()} | Hunting Coder</title>
+                <title>{slug?.substring(0,1).toLocaleUpperCase() + slug?.substring(1)} | Hunting Coder</title>
                 <meta name="description" content="A blog post for the coder, by the coder, of the coder :)" />
                 <meta name="keywords" content="huting coder, hunting, coder, nextJs, nextjs, About Hunting Coders" />
             </Head>

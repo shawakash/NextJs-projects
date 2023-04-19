@@ -14,7 +14,7 @@ const Blog = () => {
     return (
         <>
             <Head>
-                <title>Blog | Hunting Coder</title>
+                <title>Blogs | Hunting Coder</title>
                 <meta name="description" content="A blog post for the coder, by the coder, of the coder :)" />
                 <meta name="keywords" content="huting coder, hunting, coder, nextJs, nextjs, About Hunting Coders" />
             </Head>
@@ -33,7 +33,7 @@ const Blog = () => {
                             <Link href={`/blogpost/${blog.slug}`}>
                                 <h3 className={`font-semibold text-2xl`}>{blog?.title}</h3>
                             </Link>
-                            <p className={`font-normal w-fit text-slate-600 text-lg`}>{(blog?.content).slice(0, 250)} ...</p>
+                            <p className={`font-normal w-fit text-slate-600 text-lg`}>{(blog?.content).slice(0, 250)} <span className='font-extrabold'><Link  href={`/blogpost/${blog.slug}`}>...</Link></span></p>
                         </div>
                     );
                 })}
