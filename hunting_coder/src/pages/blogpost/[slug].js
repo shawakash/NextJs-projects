@@ -57,10 +57,10 @@ const Slug = ({ blog }) => {
 
 
 export async function getServerSideProps(context) {
-    console.log(context.query)
+    // console.log('From slug' ,context.query)
     const { slug } = context.query
-    let blog = await fetch(`http://localhost:3000/api/blogPost?slug=${slug}`);
-    console.log(blog)
+    let response = await fetch(`http://localhost:3000/api/blogPost?slug=${slug}`);
+    const blog = await response.json()
     return {
         props: { blog }
     }
