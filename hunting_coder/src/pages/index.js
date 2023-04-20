@@ -28,6 +28,7 @@ export default function Home({ blogs }) {
         <title>Hunting Coder</title>
         <meta name="description" content="A blog post for the coder, by the coder, of the coder :)" />
         <meta name="keywords" content="huting coder, hunting, coder, nextJs, nextjs" />
+        <link rel="shortcut icon" href="https://www.shutterstock.com/image-vector/magazine-page-icon-transparent-style-600w-1410195017.jpg" type="image/x-icon" />
       </Head>
       {/* <Script src='/api/hello.js' strategy='lazyOnload' onError={() => console.log('Hola')}>
         alert('Hola')
