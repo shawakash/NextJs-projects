@@ -7,7 +7,16 @@ import React, { useEffect, useState } from 'react'
 // Find the correct post using slug
 // Fill the page
 
-const Slug = ({ blog }) => {
+const Slug = ({ blogResponse }) => {
+    const [blog,setBlog] = useState({});     // for avoiding hydration error
+
+    useEffect(() => {                        // for avoiding hydration error
+        setBlog(blogResponse)             
+    },[])
+
+    function createMarkup(c) {
+        return { __html: c };
+    }
     const router = useRouter();
     const { slug } = router.query;
     return (
@@ -22,7 +31,7 @@ const Slug = ({ blog }) => {
                 <Link href={`/blogpost/${blog?.slug}`}>
                     <h3 className={`font-semibold text-4xl`}>{blog?.title}</h3>
                 </Link>
-                <p className={`font-semibold w-fit text-slate-600 text-xl`}>{blog?.content}</p>
+                <p className={`font-semibold w-fit text-slate-600 text-xl`} dangerouslySetInnerHTML={createMarkup(blog?.content)}></p>
             </div>
         </>
     );
@@ -60,9 +69,9 @@ export async function getServerSideProps(context) {
     // console.log('From slug' ,context.query)
     const { slug } = context.query
     let response = await fetch(`http://localhost:3000/api/blogPost?slug=${slug}`);
-    const blog = await response.json()
+    const blogResponse = await response.json()
     return {
-        props: { blog }
+        props: { blogResponse }
     }
 }
 
